@@ -46,3 +46,5 @@ WHERE city.name LIKE 'San M%' AND country.continent = 'South America'
 --   In a city of ninety-one thousand and now, eighty five.
 
 SELECT * FROM city WHERE population = 91084
+
+-- She's in Santa Monica!
