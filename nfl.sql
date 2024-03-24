@@ -20,3 +20,9 @@ SELECT * FROM players WHERE salary = (SELECT MAX(salary) FROM players)
 SELECT name, position FROM players ORDER BY salary limit 100
 -- The average salary for a DE in the nfl
 SELECT AVG(salary) FROM players WHERE position = 'DE'
+
+-- The total salary of all players on the New York Giants
+SELECT SUM(players.salary) FROM players, teams
+WHERE players.team_id=teams.id AND teams.name LIKE 'New York Giants'
+-- The player with the lowest salary on the Green Bay Packers
+SELECT * FROM players, teams WHERE players.team_id=teams.id AND teams.name LIKE 'Green Bay Packers' ORDER BY  players.salary limit 1
